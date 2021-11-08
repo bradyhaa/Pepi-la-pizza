@@ -8,13 +8,13 @@
 #mobile-mode {
     padding: 5px 20px;
     font-size: 1em;
-    border: 4.5px solid #660c2b;
+    border: 4.5px solid grey;
     border-bottom: none;
 }
 
 body {
     display: grid;
-    background-color: rgb(255, 250, 200);
+    background-color: solid burlywood;
     grid-template-rows: auto auto 1fr auto;
     grid-template-columns: 1fr;
     margin: 0;
@@ -36,11 +36,12 @@ h1 {
 h2 {
     margin: 10px auto;
     font-size: 1.5rem;
-}
+    font-family: "Cherry Swash", cursive;
+} 
 
 h3 {
     font-family: "Cherry Swash", cursive;
-    color: rgba(181, 243, 81, 0.692);
+    color: navy;
     font-size: 1.4em;
 }
 
@@ -53,6 +54,7 @@ main {
 
 .hidden {
     visibility: hidden;
+
 }
 
 .game-and-modal {
@@ -202,7 +204,9 @@ button {
 }
 
 footer {
-    background: rgba(60, 102, 12, 0.384);
+    background:rgb(124, 49, 61);
+    padding: 5px;
+    border-radius: 5px, navy;
 }
 
 .made-by {
@@ -232,4 +236,9 @@ img {
     #mobile-pads {
         width: 710px;
     }
+}
+.instructions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
