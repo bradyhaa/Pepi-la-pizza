@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pizzastyle.css">
+</head>
+<h1> Pizza Time!</h1>
+<h2> Delivering for Joe's</h2>
+</head>
+<main>
+    <div class="game-and-modal">
+        <canvas id="game" width="700" height="350"></canvas>
+        
+        <div id="start-modal" class="modal">
+                <div class="modal-content">
+                    <h3>How to Play</h3>
+                    <p id="start-content">Help Mr. Bee in his mission to pollinate as many flowers as he can! Use "W" to move up, "A" to move left, "S" to move down, and "D" to move right. Fly though the world and land on the flowers you pass.</p>
+                    <input type="radio" name="mode" id="zen-mode" value="Zen Mode">
+                        <label for="zen-mode">Zen Mode</label>
+                    <input type="radio" name="mode" id="regular-mode" value="Regular Mode" checked>
+                        <label for="regular-mode">Regular Mode</label>
+                    <p id="its-dangerous">Watch out for dangers, as the life of a bee can be short with only one stinger.</p>
+                </div>
+        </div>
+        <div id="GO-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Game Over</h3>
+                <p>Sorry for your loss, but everything is impermanent.</p>
+                <p>You can pick yourself up again by <strong>restarting</strong>. Who knows, your score could 🐝 higher!</p>
+                <button class="button" id="change-mode">Change Modes</button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-pads" class="sticky-sides hidden">
+        <div class="d-pad" id="left-pad">
+            <img src="./assets/arrow.png" alt="arrow" class="arrow up" id="left-up">
+            <img src="./assets/arrow.png" alt="arrow" class="arrow right" id="left-right">
+            <img src="./assets/arrow.png" alt="arrow" class="arrow down" id="left-down">
+            <img src="./assets/arrow.png" alt="arrow" class="arrow left" id="left-left">
+        </div>
+        <div class="d-pad" id="right-pad">
+                <img src="./assets/arrow.png" alt="arrow" class="arrow up" id="right-up">
+                <img src="./assets/arrow.png" alt="arrow" class="arrow right" id="right-right">
+                <img src="./assets/arrow.png" alt="arrow" class="arrow down" id="right-down">
+                <img src="./assets/arrow.png" alt="arrow" class="arrow left" id="right-left">
+        </div>
+    </div>
+    <button id="start"> Start the game!</button>
+    <div class="score-card">
+        <ol id="high-scores"></ol>
+    </div>
+</main>
+
+<footer class="sticky-sides">
+    <div class="social-media"><a href="https://github.com/009Kings" ><img src="./assets/GitHub.png" alt="github logo" class="icon"></a>
+    <a href="https://www.linkedin.com/in/sarah-king-wang-shasha/"><img src="./assets/In-Black-81px-TM.png" alt="linkedin logo" class="icon"></a>
+    <a href="mailto:009kings@gmail.com"><img src="./assets/Mail.png" alt="Mail icon" class="icon"></a></div>
+
+    <span class="made-by">Made to 🐝 free by <span class="name">Sarah King</span> © 2018</span>
+</footer>
+<body>
+    
+</body>
+
+<script src="./pepi.js"></script>
+</html>
