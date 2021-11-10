@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SpideysPizzaRun</title>
     <link rel="stylesheet" href="./pizzastyle.css">
 </head>
-<body onload="draw();">
+<body>
+
     <div class="titlebox">
-<h1> Pizza Time!</h1>
+<h1> Peter's Pizza Panic Pandomonium!</h1>
 </div>
-<h2> Delivering for Joe's with a slice of danger!</h2>
+<h2> Deliver the pizza pies to passers by to pick up points for the Peter Parker guy!</h2>
 </head>
+<nav><u class="controls">
+
+</u>Controls</u>
+    <br>
+    W=Up
+    <br>
+    S=Down
+    <br>
+    A=Left
+    <br>
+    D=Right
+    <br>
+
+</nav>
+
 
 <main>
-    <img id="pavement" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcnKfBcqw3VG2QhGVIsAggRD-mYxPeI0-qEw&usqp=CAU">
+    <br>
     <div class="game-and-modal">
         <canvas id="game" width="700" height="350"></canvas>
         
@@ -26,7 +42,7 @@
                     <p id="its-dangerous">Keep an eye out for any wild yellow cabs, for the ride of a delivery bike can be a perillous one.</p>
                     <img src="./assets/spideyman.png" alt="taximans">
                     <img src="./assets/taxi.png">
-                    <img src="./assets/cityscapecartoon.jpeg">
+                    <img src="./assets/citylong.png">
                 </div>
         </div>
         <div id="GO-modal" class="modal hidden">
@@ -38,26 +54,8 @@
         </div>
     </div>
     </div>
-    <button id="start"> Start the game!</button>
-    
-    <div class="hud-info">
-    <div class="instructions">
-        <h2><u>Movement Keys</u></h2>
-        <div class="instructions-keys">
-            <p>
-                W/S = Vertical Movement <br>
-                A/D = Horizontal Movement
-            </p>
-        </div>
-    </div>
-    <div class="score-card">
-        <ol id="high-scores">
-            <h2><u>High Scores</u></h2>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ol>
-    </div>
+    <button id="start" onclick='draw()'> Start the game!</button>
+    <br>
 </div>
 </main>
 <footer>
@@ -65,4 +63,5 @@
 </footer>
 </body>
 <script src="./pepi.js"></script>
+<br>
 </html>

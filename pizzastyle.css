@@ -34,6 +34,11 @@ h3 {
     color: white;
     font-size: 1.4em;
 }
+h4 {
+    font-family:  "Cherry Swash", cursive;
+    color:rgb(139, 19, 19);
+    font-size: 30px;
+}
 
 main {
     align-items: center;
@@ -95,8 +100,10 @@ footer {
         width: 700px;
         height: 300px;
         display: flex;
-        flex-direction: row;
+        display: inline-block;
+        flex-direction: column;
         justify-content: space-around;
+        align-self: center;
        
 }
 
@@ -109,16 +116,7 @@ footer {
     align-items:center;
     border: 5px solid red;
 }
-#high-scores {
-    display: flex;
-    background-color: seashell;
-    width: 250px;
-    height: 205px;
-    flex-direction: column;
-    align-items:flex-start;
-    border: 5px solid red;
-    text-align: left;
-}
+
 .score-card {
     display: flex;
     flex-direction: column;
@@ -128,10 +126,18 @@ footer {
     list-style-position: inside;
 }
 
-#pavement {
-    visibility: hidden;
-}
 .titlebox {
     background-color: rgb(139, 19, 19);
+    border-radius: 1px solid white;
+}
+nav{
+    display: flex;
+    background-color: rgb(214, 255, 214);
+    color:rgb(139, 19, 19);
+    border-color:rgb(139, 19, 19);
+    height: 150px;
+    width: 350px;
+    
+    
 }
 
