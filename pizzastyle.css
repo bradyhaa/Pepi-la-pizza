@@ -1,30 +1,19 @@
-@media only screen and (max-width: 710px) {
-    #mobile-pads {
-        width: 710px;
-    }
-}
-
-
-#mobile-mode {
-    padding: 5px 20px;
-    font-size: 1em;
-    border: 4.5px solid grey;
-    border-bottom: none;
-}
 
 body {
     display: grid;
-    background-color: solid burlywood;
-    grid-template-rows: auto auto 1fr auto;
+    background-image: url('https://www.statnews.com/wp-content/uploads/2020/12/stat_cityblock_2000x1125_f2-1024x576.jpg');
     grid-template-columns: 1fr;
     margin: 0;
     font-family: "Julius Sans One", sans-serif;
+    background-size: cover;
 }
 
 h1, h2 {
     text-align: center;
-    color: #660c2b;
+    color: white;
     align-items: start;
+    border-radius: 1px;
+    border-color: solid red;    
 }
 
 h1 {
@@ -34,14 +23,15 @@ h1 {
 }
 
 h2 {
-    margin: 10px auto;
+    margin: 0;
     font-size: 1.5rem;
     font-family: "Cherry Swash", cursive;
+    background-color: rgb(139, 19, 19);
 } 
 
 h3 {
     font-family: "Cherry Swash", cursive;
-    color: navy;
+    color: white;
     font-size: 1.4em;
 }
 
@@ -54,7 +44,6 @@ main {
 
 .hidden {
     visibility: hidden;
-
 }
 
 .game-and-modal {
@@ -62,40 +51,12 @@ main {
     height: 360px;
     margin: 0 auto;
     position: relative;
-    padding: 0;
-}
-
-.modal {
-    width: 680px;
-    padding: 5px;
-    height: 330px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgb(124, 49, 61);
-}
-
-#GO-modal {
-    width: 400px;
-    height: 320px; 
-    top: 12px;
-    left: 150px;
-    background-color: rgba(124, 49, 61, 0.7);
-    border: 4px solid #660c2b;
-    font-family: "Raleway", sans-serif;
-}
-
-.modal-content {
-    padding: 2%;
-    text-align: center;
-    color:  rgb(214, 255, 214);
-    line-height: 1.4em;
-    letter-spacing: .2em;
 }
 
 canvas {
-    border: 5px solid #660c2b;
-    margin: 0 auto;
+    border: 10px solid #660c2b;
+    align-items: center;
+    background-color: silver;
 }
 
 button {
@@ -117,128 +78,60 @@ button {
     border-top: none;
 }
 
-#change-mode {
-    padding: 10px;
-    border: 2px solid #660c2b;
-    font-size: 1em;
-    margin-top: 10%;
-}
-
-.sticky-sides { 
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr;
-}
-
-#mobile-pads {
-    display: grid;
-    position: absolute;
-    top: 350px;
-    width: 100%;
-    grid-template-columns: 180px 1fr 180px;
-}
-
-.d-pad {
-    height: 180px;
-    width: 180px;
-    border-radius: 50%;
-    background-color:rgba(101, 138, 29, 0.36);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        ". up ."
-        "left . right"
-        ". down .";
-}
-
-.arrow {
-    height: 60px;
-    width: 60px;
-}
-
-.up {
-    grid-area: up;
-}
-
-.right {
-    grid-area: right;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.down {
-    grid-area: down;
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.left {
-    grid-area: left;
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
-}
-
-#right-pad {
-    grid-column: 3;
-}
-
-.score-card {
-    margin: 0 auto;
-    width: 700px;
-    text-align: center;
-    list-style-position: inside;
-}
-
-.score-item {
-    margin: 3px;
-}
-
 footer {
     background:rgb(124, 49, 61);
-    padding: 5px;
-    border-radius: 5px, navy;
+    border-radius: 5px, white;
+    color: thistle;
 }
 
 .made-by {
     text-align: right;
-    padding: 0 5px;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
-.social-media {
-    text-align: left;
-    padding: 5px 5px;
+.hud-info {
+        width: 700px;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+       
 }
 
-img {
-    height: 1.3em;
-}
-
-.icon {
-    align-self: center;
-    justify-self: center;
-}
-
-.name {
-    font-weight: 800;
-}
-
-@media only screen and (max-width: 710px) {
-    #mobile-pads {
-        width: 710px;
-    }
-}
 .instructions {
     display: flex;
-    justify-content: center;
-    text-align: center;
+    background-color: seashell;
+    width: 250px;
+    height: 205px;
+    flex-direction: column;
+    align-items:center;
+    border: 5px solid red;
 }
+#high-scores {
+    display: flex;
+    background-color: seashell;
+    width: 250px;
+    height: 205px;
+    flex-direction: column;
+    align-items:flex-start;
+    border: 5px solid red;
+    text-align: left;
+}
+.score-card {
+    display: flex;
+    flex-direction: column;
+    height: 305px;
+    width: 335px;
+    margin: 0px;
+    list-style-position: inside;
+}
+
+#pavement {
+    visibility: hidden;
+}
+.titlebox {
+    background-color: rgb(139, 19, 19);
+}
+
