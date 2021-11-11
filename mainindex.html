@@ -7,42 +7,29 @@
     <title>SpideysPizzaRun</title>
     <link rel="stylesheet" href="./pizzastyle.css">
 </head>
-<body>
+<body onload='pageLoad()'>
 
     <div class="titlebox">
 <h1> Peter's Pizza Panic Pandomonium!</h1>
 </div>
 <h2> Deliver the pizza pies to passers by to pick up points for the Peter Parker guy!</h2>
 </head>
-<nav><u class="controls">
-
-</u>Controls</u>
-    <br>
-    W=Up
-    <br>
-    S=Down
-    <br>
-    A=Left
-    <br>
-    D=Right
-    <br>
-
-</nav>
-
-
 <main>
     <br>
     <div class="game-and-modal">
         <canvas id="game" width="700" height="350"></canvas>
         
-        <div id="start-modal" class="modal hidden">
+        <div id="start-modal" class="modal">
                 <div class="modal-content">
                     <h3>How to Play</h3>
-                    <p id="start-content">Help Peter deliver as many pizza pies to the people of St. Petersburg before rush hour hits his bike.</p>
-                    <p id="its-dangerous">Keep an eye out for any wild yellow cabs, for the ride of a delivery bike can be a perillous one.</p>
-                    <img src="./assets/spideyman.png" alt="taximans">
-                    <img src="./assets/taxi.png">
-                    <img src="./assets/citylong.png">
+                    <p id="start-content">Help Peter deliver all the pizzas to all the hungry Queens before time runs out.</p>
+                    <p id="its-dangerous">Controls 
+                        <br> W = Move Peter Parker <strong>(UP)</strong> a lane.
+                        <br> A = Make Peter Parker <strong>(SLOWDOWN)</strong>. 
+                        <br> S = Move Peter Parker <strong>(DOWN)</strong> a lane.
+                        <br> D = Make Peter Parker <strong>(SPEED UP)</strong>.
+                    </p>
+                    <p>Control </p>
                 </div>
         </div>
         <div id="GO-modal" class="modal hidden">
@@ -50,11 +37,14 @@
                 <h3>Game Over</h3>
                 <p>Your slices are being eaten by the rats :(.</p>
                 <p>You can head back to Joe's and pick up some fresh ones <strong>restarting</strong>. Who knows, your score could 🐝 higher!</p>
+                <img src="./assets/spideyman.png" alt="taximans">
+                    <img src="./assets/taxi.png">
+                    <img src="./assets/Long-road-city.png">
             </div>
         </div>
     </div>
     </div>
-    <button id="start" onclick='draw()'> Start the game!</button>
+    <button id="start" onclick='start()'> Start the game!</button>
     <br>
 </div>
 </main>

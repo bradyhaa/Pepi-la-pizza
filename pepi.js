@@ -1,10 +1,21 @@
-function draw() {
+let welcomeModal = document.getElementById('start-modal');
+
+
+//Onclick Start 
+function start() {
+welcomeModal.className = 'modal hidden';
+
+//render the canvas
   let canvas = document.getElementById("game");
   if (canvas.getContext) {
     let ctx = canvas.getContext("2d");
 
+
+    /////////// Creating Classes for Players/Characters ////////
     city = new Image();
-city.src = 'assets/citylong.png';
+    city.src = 'assets/Long-road-city.png';
+
+
 
 class Skyline {
   constructor(img) {
@@ -39,76 +50,99 @@ peter.src = 'assets/spideyman.png';
       }
     }
   }
+  ////////  Paint Screen  //////////
+
+  window.addEventListener("game", function(e) {
+    peter = new Player(10, 20, peter, 20, 20);
+    taxi = new Taxi(100, 200, taxi, 40, 80);
+
+    const runGame = setInterval(gameLoop, 120);
+});
+
+document.addEventListener('keydown', movementHandler);
+
+/////////////////////
 
   //RENDERING
+  let street = new Skyline(city);
+  street.render();
+  
   let parker = new Player(peter);
   parker.render();
 
   let cab = new Taxi(taxi);
   cab.render();
 
-  let street = new Skyline(city);
-  street.render();
-
   }
 }
 
+////////  SCROLLLING ANIMATION ///////
 
-function init() {
-  return gameState = {
-      gravity: 1,
-      score: 0,
-      mode: "Regular Mode",
-      gameRunning: true,
-      peter: {
-          peterPause: false,
-          x: canvasWidth/14,
-          y: (canvasHeight*3)/7,
-          height: 50,
-          width: 60,
-          wings: 10,
-          velocity: 3.5,
-          beeMoveUp: false,
-          beeMoveDown: false,
-          beeMoveLeft: false,
-          beeMoveRight: false,
-          hasStinger: true, // stinger false means bee is dead
-          typeOfDeath: "none",
-      },
-      pauseMS: 300,
-      flowers: [],
-      flowerWidth: canvasWidth/14,
-      flowerHeight: canvasHeight,
-      flowerNum: 0,
-      maxFlowers: 30,
-      flowerFreqMin: 1500,
-      flowerFreqMax: 500,
-      enemies: {
-          wasps: {
-              inGame: true,
-              width: 80,
-              height: 70,
-              wingHeight: 10,
-              freqMin: 7000,
-              freqMax: 3000,
-              maxWasps: 10,
-              waspsNum: [],
-          },
-          dasBoot: {
-              inGame: false,
-          },
-          windGusts: {
-              inGame: false,
-          },
-          wateringCan: {
-              inGame: false,
-          }
-      },
+let canvas = document.getElementById("game");
+  let context = canvas.getContext("2d");
+  let image = new Image();
+
+  image.onload = function() {
+    let x = 0;
+    let width = image.width;
+    let min = 0-width;
+    let step = 1;
+
+    let loop = function() {
+      context.drawImage(image, x, 0);
+      context.drawImage(image, x + width, 0);
+      x -= step;
+      if (x < min) {
+        x = 0;
+      }
+    };
+    setInterval(loop, 1000 / 60);
+  };
+
+  image.src = 'assets/Long-road-city.png';
+  /////////////////////////  GAME LOOP FUNCTION   ///////////////////
+
+  function gameLoop(){
+    ctx.clearRect(0, 0, game.width, game.height);
+    loop();
+
+    if (peter.alive) {
+      peter.render();
+    }
+
+    peter.render();
+    drawScore();
+    endGame();
+  }
+
+  ///////////// onload page function
+function pageLoad() {
+}
+///////////  KEYBOARD INTERACTION LOGIC
+
+function movementHandler (e){
+  console.log('movement', e.key);
+  
+  switch(e.key) {
+      case 'w':
+      // move donkey up
+      peter.y - 10 >= 0 ? peter.y -=10 : null;
+      break;
+      case 'a':
+      //move donkey left
+      peter.x - 10 >= 0 ? peter.x -=10 : null;
+      break;
+      case 'd':
+      //move donkey right
+      peter.x + 10 <= game.width ? peter.x +=10 : null; //ternary operator
+      break;
+      case 's': 
+      // move donkey down
+      peter.y + 10 <= game.height ? peter.y +=10 : null;
+      break;
   }
 }
-
-
-
+/////////////////////////////////////////////////////
 //     // const img = new Image(243, 143);
 //     // img.src = 'assets/taximan.jpeg';
 //     // document.body.appendChild(img);
