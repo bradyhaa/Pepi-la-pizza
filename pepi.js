@@ -17,6 +17,7 @@ game.setAttribute("width", getComputedStyle(canvas)["width"]);
 window.addEventListener("DOMContentLoaded", function (e) {
   taxi = new Taxi(taxi, 460, 205);
   peter = new Player(peter, 60, 240);
+  car = new Image(car, 60, 30);
 
   runGame = setInterval(gameLoop, 1000 / 60);
 });
@@ -25,25 +26,8 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
 document.addEventListener("keydown", movementHandler);
 
-///// GUI
 
 
-function gameOver() {
-  let GOModal = document.getElementById('GO-modal');
-  GOModal.classList.remove('hidden');
-  document.getElementById('start').textContent = 'Restart';
-  document.getElementById('start').classList.remove('hidden');
-}
-
-// function addNewTaxi() {
-//   Taxi.alive = true;
-//   setTimeout(function () {
-//     let x = Math.floor(Math.random() * game.width) - 40;
-//     let y = Math.floor(Math.random() * game.height) - 80;
-//     taxi = new Taxi(x, y, "assets/taxi.png", 40, 80);
-//   }, 1000); // after 1000 milisecs a new taxi will be added
-//   return true;
-// }
 
 ///////////  CLASS  PLAYERS/CHARACTERS ////////
 city = new Image();
@@ -173,10 +157,10 @@ let car = new Image(); car.src = "assets/spritesheet.png";
             let carsY = [carY1, carY2, carY3, carY4, carY5, carY6];
 
             for (i = 0; i < carsX.length; i++) {
-            if (carsX[i] <= peter.x + peter.width &&
-                carsX[i] + carWidth >= parker.x &&
-                carsY[i] + carHeight >= peter.y &&
-                carsY[i] <= peter.y + peter.height) {
+            if (carsX[i] <= (peter.x + peter.width) &&
+                carsX[i] + (carWidth >= parker.x) &&
+                carsY[i] + (carHeight >= peter.y) &&
+                carsY[i] <= (peter.y + peter.height)) {
                     gameOver();
                 }
             }
@@ -190,7 +174,7 @@ function movementHandler(e) {
   switch (e.key) {
     case "w":
       // move spidey up
-      peter.y - 10 >= 0 ? (peter.y -= 15) : null;
+      peter.y - 10 >= 0 ? (peter.y -= 22) : null;
       break;
     case "a":
       //move spidey left
@@ -202,7 +186,7 @@ function movementHandler(e) {
       break;
     case "s":
       // move spidey down
-      peter.y + 10 <= game.height ? (peter.y += 15) : null;
+      peter.y + 10 <= game.height ? (peter.y += 22) : null;
       break;
   }
 }
@@ -296,26 +280,22 @@ function gameLoop() {
   }
   peter.render();
 }
-//// DETECT HIT FUNCTION ///////
-function detectHit (peter, taxi) {
-  let hitTest = (
-      peter.y + peter.height > taxi.y && 
-      peter.y < taxi.y + taxi.height &&
-      peter.x + taxi.width > taxi.x &&
-      peter.x < taxi.x + taxi.width
-  ); // {boolean} : if all are true -> hit
 
-  if (hitTest) {
-      return gameOver();
-  } else {
-      return false;
+/// GAME OVER Function
+function gameOver() {
+  let GOModal = document.getElementById('GO-modal');
+  GOModal.classList.remove('hidden');
+  restart = document.getElementById('start');
+  restart.onclick = function() {
+    start();
+    GOModal.classList.add('hidden');
   }
-}
+    document.getElementById('start').classList.remove('hidden');
+  };
 
 //////////////////// PAINT THE SCREEN
 window.addEventListener("game", function (e) {
   peter = new Player(10, 20, peter, 20, 20);
-  taxi = new Taxi(100, 200, taxi, 40, 80);
 
   const runGame = setInterval(gameLoop, 120);
 });
@@ -340,11 +320,14 @@ function updateCountDown() {
 
   countDownEl.innerHTML = minutes + ":" + seconds;
 
-  if (time < 0) {
+  if (time === 0) {
     countDownEl.innerHTML = "You WON you made it!";
     countDownEl.style.color = "red";
+    gameOver();
   }
+  
 }
+
 let clearT;
 
 function refresh() {
