@@ -1,4 +1,4 @@
-## Get Peter Parker safely passed all the killer cabs and deliver as many pizzas as possbile.
+## Get Peter Parker safely passed all the killer cabs!
 Inspired by a scene in Spider-Man 2 movie.:red_circle:�:large_blue_circle:�:white_circle:
 Peter Parker must try and deliver as many pizzas through the crowded traffic laiden New York streets.
 If he gets hit by an oncoming taxi-cab or runs out of time to deliver pizzas he will be fired from Joe's Pizzeria.
