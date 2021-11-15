@@ -158,3 +158,14 @@ footer {
     font-family: "Cherry Swash", cursive;
     font-size: large;
 }
+.clock-score {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    background-color: cornsilk;
+    border-radius: 0ch;
+    
+
+}
+
+

@@ -12,9 +12,10 @@
     <div class="titlebox">
 <h1> Peter's Pizza Panic Pandomonium!</h1>
 </div>
-<h2> Deliver the pizza pies to passers by to pick up points for the Peter Parker guy!</h2>
+<h2> Help Peter dodge all the taxi-cabs and last the time alotted to win!</h2>
 </head>
 <main>
+    
     <br>
     <div class="game-and-modal">
         <canvas id="game" width="700" height="350"></canvas>
@@ -22,7 +23,7 @@
         <div id="start-modal" class="modal">
                 <div class="modal-content">
                     <h3>How to Play</h3>
-                    <p id="start-content">Help Peter deliver all the pizzas to all the hungry Queens before time runs out.</p>
+                    <p id="start-content">Help Peter dodge all the taxi-cabs and last the time alotted to win!.</p>
                     <p id="its-dangerous">Controls 
                         <br> W = Move Peter Parker <strong>(UP)</strong> a lane.
                         <br> A = Make Peter Parker <strong>(SLOWDOWN)</strong>. 
@@ -36,7 +37,7 @@
             <div class="modal-content">
                 <h3>Game Over</h3>
                 <p>Your slices are being eaten by the rats :(.</p>
-                <p>You can head back to Joe's and pick up some fresh ones <strong>restarting</strong>. Who knows, your score could 🐝 higher!</p>
+                <p>You can head back to Joe's and pick up some fresh ones by refreshing and <strong>restarting</strong>.</p>
                 <img src="./assets/spideyman.png" alt="taximans">
                     <img src="./assets/taxi.png">
                     <img src="./assets/Long-road-city.png">
@@ -47,6 +48,14 @@
     <button onclick='start()'class="button" id="start" > Start the game!</button>
     <br>
 </div>
+<div class="clock-score">
+    <aside id='bottom-center'>
+        <h4 id='spidey-score'> <strong><u>Score</u></strong></h4>
+        <p id="timer">Time Limit: 1 Minute</p>
+
+    </aside>
+</div>
+<div id="movement"></div>
 </main>
 <footer>
     <span class="made-by">Made for pizza lovers by...<span class="name"> Brady Aarons</span> © 2021</span>
